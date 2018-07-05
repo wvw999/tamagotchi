@@ -9,6 +9,10 @@ class Tamagotchi
     @sleep_level = 10
     @activity_level = 10
     @time_born = Time.now
+    @last_food_time = Time.now
+    @last_sleep_time = Time.now
+    @last_activity_time = Time.now
+
   end
 
   def is_alive()
@@ -19,6 +23,12 @@ class Tamagotchi
     end
   end
 
+  def do_verb(verb)
+    verb += 2
+    time_passes
+    is_alive
+  end
+
   def set_food_level(new_food_level)
       @food_level = new_food_level
       #local variable is new_food_level
@@ -26,11 +36,13 @@ class Tamagotchi
 
   def time_passes()
     current_time = Time.now
-    attribute_decrement = current_time - @time_born
+    food_decrement = current_time - @last_food_time
+    sleep_decrement = current_time - @last_sleep_time
+    activity_decrement = current_time - @last_activity_time
     # each attrib - attribute_decrement/15
-    @food_level -= (attribute_decrement/15).round
-    @sleep_level -= (attribute_decrement/15).round
-    @activity_level -= (attribute_decrement/15).round
+    @food_level -= (food_decrement/15).round
+    @sleep_level -= (sleep_decrement/15).round
+    @activity_level -= (activity_decrement/15).round
     @time_born = current_time
   end
 end

@@ -5,10 +5,15 @@ require('./lib/tamagotchi')
 require('pry')
 
 
-post('/') do
+get('/') do
   @my_pet = Tamagotchi.new({:name => "lil dragon"})
-  erb(:input)
+  erb(:home)
 end
+
+post('/main')
+
+
+# post('/proceed')
 
 # post('/') do
 #   name = params["name"]
