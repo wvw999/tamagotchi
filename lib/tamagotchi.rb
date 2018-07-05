@@ -9,4 +9,12 @@ class Tamagotchi
     @sleep_level = 10
     @activity_level = 10
   end
+
+  def is_alive()
+    if food_level >0 && sleep_level >0 && activity_level > 0
+      true
+    else
+      false
+    end
+  end
 end
