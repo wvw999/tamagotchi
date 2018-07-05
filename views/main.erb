@@ -10,3 +10,6 @@
   <h4>Your pet's play level is: <%=Tamagotchi.activity%></h4>
   </div>
 </form>
+<% if @my_pet.is_alive == false %>
+<%= erb(:dead) %>
+<% end %>

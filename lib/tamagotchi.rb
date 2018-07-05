@@ -2,9 +2,9 @@ class Tamagotchi
   # attr_reader(:name)
   # attr_accessor(:food_level, :sleep_level, :activity_level)
   #making methods for food_level, sleep_level, etc
-  @@food_level = 10
-  @@sleep_level = 10
-  @@activity_level = 10
+  # @@food_level = 50
+  # @@sleep_level = 50
+  # @@activity_level = 50
   @@time_born = Time.now
   @@last_food_time = Time.now
   @@last_sleep_time = Time.now
@@ -26,6 +26,19 @@ class Tamagotchi
   def self.name(name)
     @@name = name
   end
+
+  def self.set_food(food)
+    @@food_level = food
+  end
+
+  def self.set_sleep(sleepy)
+    @@sleep_level = sleepy
+  end
+
+  def self.set_activity(activity)
+    @@activity_level = activity
+  end
+
 
   def initialize
   end
