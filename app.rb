@@ -11,9 +11,9 @@ end
 
 post('/home') do
   @my_pet = Tamagotchi.new()
-  Tamagotchi.set_food(1)
-  Tamagotchi.set_sleep(1)
-  Tamagotchi.set_activity(1)
+  Tamagotchi.set_food(10)
+  Tamagotchi.set_sleep(10)
+  Tamagotchi.set_activity(10)
   pet_name = params.fetch('name')
   Tamagotchi.name(pet_name)
   erb(:main)
