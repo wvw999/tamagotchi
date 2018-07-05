@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tamagotchi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="<%= url("/styles.css")%>" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>Don't kill your little plastic pet!</h2>
+      </div>
+        <%= yield %>
+    </div>
+    <h4>Your pet's food level is: <%=@my_pet.food_level%></h4>
+    <h4>Your pet's sleep level is: <%=@my_pet.sleep_level%></h4>
+    <h4>Your pet's play level is: <%=@my_pet.activity_level%></h4>
+  </body>
+</html>
