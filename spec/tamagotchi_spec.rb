@@ -1,5 +1,5 @@
 require('rspec')
-require('favorite_things')
+require('tamagotchi')
 
 describe(Tamagotchi) do
   describe("#initialize") do
