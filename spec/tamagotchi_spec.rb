@@ -17,4 +17,10 @@ describe(Tamagotchi) do
      expect(my_pet.is_alive()).to(eq(true))
    end
  end
+   it("is dead if the food level is 0") do
+        my_pet = Tamagotchi.new({:name => "lil dragon"})
+        my_pet.set_food_level(0)
+        #make a method that will change the food level of your tamagotchi.
+        expect(my_pet.is_alive()).to(eq(false))
+    end
 end

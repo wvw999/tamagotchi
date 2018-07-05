@@ -11,10 +11,15 @@ class Tamagotchi
   end
 
   def is_alive()
-    if food_level >0 && sleep_level >0 && activity_level > 0
+    if @food_level > 0 && @sleep_level > 0 && @activity_level > 0
       true
     else
       false
     end
+  end
+
+  def set_food_level(new_food_level)
+      @food_level = new_food_level
+      #local variable is new_food_level
   end
 end
