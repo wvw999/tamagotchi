@@ -10,12 +10,14 @@ get('/') do
 end
 
 post('/home') do
-  @my_pet = Tamagotchi.new({:name => params.fetch("name")})
+  @my_pet = Tamagotchi.new()
+  pet_name = params.fetch('name')
+  Tamagotchi.name(pet_name)
   erb(:main)
 end
 
 post('/main') do
-  @my_pet = Tamagotchi.new({:name => "lil dragon"})
+  @my_pet = Tamagotchi.new()
   pet_sleep = params["sleep-btn"]
   pet_food = params["food-btn"]
   pet_activity = params["activity-btn"]
